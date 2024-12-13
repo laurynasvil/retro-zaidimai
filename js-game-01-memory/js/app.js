@@ -1,4 +1,4 @@
-// kortų poros
+// kortu poros
 const cardArray = [
     {name: 'bread', img: 'img/bread.png'},
     {name: 'bread', img: 'img/bread.png'},
@@ -13,15 +13,19 @@ const cardArray = [
     {name: 'soup', img: 'img/soup.png'},
     {name: 'soup', img: 'img/soup.png'}
 ]
+
 cardArray.sort(() => 0.5 - Math.random())
+
 // sujungiame su HTML elementais
 const grid = document.querySelector('.grid')
 const resultDisplay = document.querySelector('#result')
+
 // masyvai kortoms
 let cardsChosen = []
 let cardsChosenId = []
 let cardsWon = []
-// sukuriame lentelę
+
+// sukursime lenele
 function createBoard() {
     for(let i = 0; i < cardArray.length; i++) {
         let card = document.createElement('img')
@@ -31,6 +35,7 @@ function createBoard() {
         grid.appendChild(card)
     }
 }
+
 function flipCard() {
     let cardId = this.getAttribute('data-id')
     cardsChosen.push(cardArray[cardId].name)
@@ -40,16 +45,17 @@ function flipCard() {
         setTimeout(checkForMatch, 500)
     }
 }
+
 function checkForMatch() {
     let cards = document.querySelectorAll('img')
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
-    if(optionOneId == optionTwoId) {
+    if(optionOneId == optionTwoId){
         cards[optionOneId].setAttribute('src', 'img/leaves.png')
         cards[optionTwoId].setAttribute('src', 'img/leaves.png')
-        alert('Pasirinkai tą pačią kortą')
+        alert('Pasirinkai ta pacia korta')
     } else if (cardsChosen[0] === cardsChosen[1]) {
-        alert('Teisingai!')
+        alert('Teisingai')
         cards[optionOneId].setAttribute('src', 'img/blank.png')
         cards[optionTwoId].setAttribute('src', 'img/blank.png')
         cards[optionOneId].style.pointerEvents = 'none'
@@ -58,19 +64,21 @@ function checkForMatch() {
     } else {
         cards[optionOneId].setAttribute('src', 'img/leaves.png')
         cards[optionTwoId].setAttribute('src', 'img/leaves.png')
-        alert('Neatspėjai. Bandyk dar kartą.')
+        alert('Neatspejai. Bandyk dar karta.')
     }
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
     if(cardsWon.length === cardArray.length/2) {
-        resultDisplay.textContent = 'Sveikiname! atspėjai visas kortas!'
-        if(confirm('Žaisi dar kartą?')) {
+        resultDisplay.textContent = 'Sveikiname! atspejai visas kortas'
+        if(confirm('Zaisi dar karta?')) {
             document.location.href = ''
         } else {
-            resultDisplay.textContent = 'Iki kito karto!'
+            resultDisplay.textContent = 'Iki kito karto'
         }
     }
 }
-// panaudojame createBoard funkciją ir sukuriame atvaizdavimą
+
+
+// panaudojam createBord funkcija ir sukuriam atvaizda
 createBoard()
