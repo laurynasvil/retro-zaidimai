@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="VCS puslapis">
+        <title>VCS</title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body onload="startTime()">
+        <!-- Dabartinis laikas -->
+        <h2>Dabartinis laikas</h2>
+        <div id="txt"></div>
+        
+        <!-- Temperatūros keitimas -->
+        <h2>Javascript Celsius ir Fahrenheit</h2>
+        <p>Viename iš žemiau esančių laukelių įveskite skaičių:</p>
+        <p><input id="c" onkeyup="tempKeitimas('C')"> C</p>
+        <p><input id="f" onkeyup="tempKeitimas('F')"> F</p> 
+        
+        <!-- Vartotojo ekrano plotis ir aukštis -->
+        <h2>Vartotojo ekrano plotis ir aukštis</h2>
+        <p id="ekranoPlotisAukstis"></p>
+        
+        <!-- Plačiau mygtukas -->
+        <h2>Plačiau mygtukas</h2>
+        <p>Jei norite skaityti šį straipsnį toliau, paspauskite mygtuką:</p>
+        <button onclick="placiauBtn()">Plačiau</button>
+        <p id="placiauMygtukas"></p>
+        
+        <!-- Užvedus pele ant skirtingų planetų, po nuotrauka atsiras tekstas apie tą planetą -->
+        <h2>Interaktyvi nuotrauka</h2>
+        <img src ="images/planets.gif" width ="145" height ="126" alt="Planetos" usemap="#planetmap" />
+
+        <map name="planetmap">
+        <area shape ="rect" coords ="0,0,82,126"
+        onmouseover="aprasas('Saulė ir milžiniškos dujinės planetos kaip Jupiteris yra didžiausi Saulės sistemoje.')"
+        href ="sun.htm" target ="_blank" alt="Saulė" />
+
+        <area shape ="circle" coords ="90,58,3"
+        onmouseover="aprasas('Merkurijaus planetą labai sudėtinga studijuoti iš Žemės, kadangi Merkurijus yra arti Saulės.')"
+        href ="mercur.htm" target ="_blank" alt="Mercurijus" />
+
+        <area shape ="circle" coords ="124,58,8"
+        onmouseover="aprasas('Iki 1960-ųjų manyta, kad Venera yra Žemės dvynė, nes Venera yra arčiausiai Žemės esanti planeta ir turi daug bendrų bruožų.')"
+        href ="venus.htm" target ="_blank" alt="Venera" />
+        </map> 
+
+        <p id="tekstas">Užveskite pele any saulės ir planetų, kad sužinotumėte apie jas daugiau.</p>
+        
+        <!-- Užvedus pele ant ant nuotraukos, jos dydis padidėja, o patraukus pelę nuo nuotraukos, jos dydis grįžta į normalų dydį -->
+        <h2>Nuotraukos padidėjimas užvedus ant jos pele</h2>
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/apple.jpeg" alt="Apple logo" width="120" height="120">
+
+        <!-- Įvedus vardą ir paspaudus mygtuką, atsidarys patvirtinimo langas su informacija į kurį puslapį bus perkeltas vartotojas -->
+        <h2>Redirect po mygtuko paspaudimo</h2>
+        <form onsubmit="confirmInput()" action="http://www.apple.com/" target="_blank">
+            Jūsų vardas: <input id="fname" type="text" size="20">
+            <input type="submit" value="Siųsti">
+        </form>
+
+        <!-- switch metodas -->
+        <h2>switch metodas</h2>
+        <form onsubmit="sezonai()">
+            <p>Tavo mėgstamiausias metų laikas: <input type="text" id="mLaikas"></p>
+            <input type="submit" value="Siųsti">
+        </form>
+        
+        <script src="scripts/custom.js"></script>
+    </body>
+</html>

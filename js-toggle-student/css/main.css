@@ -1,0 +1,17 @@
+/* Toggle custom codes */
+.bi {
+    font-size:30px;
+}
+
+#hidden {
+    display:none;
+}
+
+.manostilius {
+    width:100%;
+    padding:20px;
+    background-color:lightskyblue;
+    color:#fff;
+    font-size:30px;
+    box-sizing:border-box;
+}

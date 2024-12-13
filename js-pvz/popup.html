@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="VCS puslapis">
+        <title>Popup</title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h2>Popup</h2>
+        <div>Daug visokio teksto.
+            <div class="popup" onclick="myFunction()"><span class="actionWord">Paspausk!</span>
+                <span class="popuptext" id="myPopup">Čia tekstas, kuris rodomas popup viduje...</span>
+            </div>
+        </div>
+        
+        <h2>Modal</h2>
+        <!-- Aktyvuojame mygtuku -->
+        <button id="myBtn">Open Modal</button>
+
+        <!-- The Modal 
+        <div id="myModal" class="modal"> -->
+              <!-- Modal content -->
+        <!--      <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+              </div>
+        </div> -->
+        
+        <h2>Modal Image</h2>
+        <!-- Trigger the Modal -->
+        <img id="myImg" src="images/fjords.jpg" alt="Trolltunga, Norway" width="300" height="200">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+              <!-- The Close Button -->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!-- Modal Content (The Image) -->
+              <img class="modal-content" id="img01">
+              <!-- Modal Caption (Image Text) -->
+              <div id="caption"></div>
+        </div>
+        
+        <h2>Accordion</h2>
+        <button class="accordion">Pirma dalis</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button class="accordion">Antra dalis</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button class="accordion">Trečia dalis</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+        
+        <h2>Slideshow</h2>
+        <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="images/img_nature_wide.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="images/img_fjords_wide.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="images/img_lights_wide.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        
+        <script src="scripts/popup.js"></script>
+    </body>
+</html>
